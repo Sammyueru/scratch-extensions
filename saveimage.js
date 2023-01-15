@@ -60,26 +60,18 @@
     // output image
     var img = new Image();
     img.src = canvas.toDataURL('image/'+img_type);
-    //document.body.appendChild(img);
+    document.body.appendChild(img);
 
-    //const blob = canvas.toBlob(img);
-    canvas.toBlob(function(blob) {
-        //saveAs(blob, "Dashboard.png");
-        url = window.URL.createObjectURL(blob);
-        a.href = url;
-        a.download = file;
-        a.click();
-        window.URL.revokeObjectURL(url);
-    });
-    //const url = URL.createObjectURL(blob);
+    const blob = new Blob(img);
+    const url = URL.createObjectURL(blob);
     //const url = URL.createObjectURL(img);
-    //const link = document.createElement('a');
-    //link.href = url;
-    //link.download = file;
-    //document.body.appendChild(link);
-    //link.click();
-    //link.remove();
-    //URL.revokeObjectURL(url);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = file;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
   };
 
   class SaveImage {
