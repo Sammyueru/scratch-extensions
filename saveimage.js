@@ -31,11 +31,12 @@
 
     // Create canvas
     canvas = document.createElement('canvas');
-    var context = canvas.getContext('2d');
-    var imgData = context.createImageData(width, height);
-
+    
     canvas.height = height;
     canvas.width = width;
+    
+    var context = canvas.getContext('2d');
+    var imgData = context.createImageData(width, height);
 
     // fill imgData with colors from array
     for(var i = 0; i < pixels.length; i++) {
