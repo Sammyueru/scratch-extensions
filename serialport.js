@@ -1,7 +1,7 @@
 //Samm (c)2023
 //1/14/2023
 
-(function(Scratch) {
+(async function(Scratch) {
   'use strict';
 
   if (!Scratch.extensions.unsandboxed) {
