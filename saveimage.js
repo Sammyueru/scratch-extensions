@@ -22,9 +22,9 @@
     //const g = parseInt(result[2], 16);
     //const b = parseInt(result[3], 16);
     
-    const r = parseInt(hex.substr(1,3), 16);
-    const g = parseInt(hex.substr(4,6), 16);
-    const b = parseInt(hex.substr(7,9), 16);
+    const r = parseInt(hex.substr(1,2), 16);
+    const g = parseInt(hex.substr(3,4), 16);
+    const b = parseInt(hex.substr(5,6), 16);
     
     return {
       r,g,b
