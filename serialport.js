@@ -9,7 +9,7 @@
   
   function getDataFromSerialPort(port) {
     if(connected_to_port == -1) {
-      
+      await port.open({ baudRate: 9600});
     }
     else if(connected_to_port == port) {
       
@@ -31,6 +31,16 @@
           {
             opcode: 'getFromSerialPort',
             blockType: Scratch.BlockType.REPORTER,
+            text: 'GETS FROM SERIAL PORT',
+            arguments: {
+              port: {
+                type: Scratch.ArgumentType.NUMBER,
+                defaultValue: '3'
+              }
+            },
+            {
+            opcode: 'sendToSerialPort',
+            blockType: Scratch.BlockType.COMMAND,
             text: 'GETS FROM SERIAL PORT',
             arguments: {
               port: {
