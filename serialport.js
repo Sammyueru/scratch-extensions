@@ -19,7 +19,7 @@
   var writer;
   
   function serial_connectPort(port, baudRate) {
-    await port.open({ baudrate: baudRate });
+    port.open({ baudrate: baudRate });
 
     decoder = new TextDecoderStream();
     inputDone = port.readable.pipeTo(decoder.writable);
