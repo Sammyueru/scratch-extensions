@@ -72,7 +72,7 @@
   class serialport {
     getInfo () {
       return {
-        id: 'samm-scratchport',
+        id: 'sammscratchport',
         name: 'scratchport',
         
         blocks: [
