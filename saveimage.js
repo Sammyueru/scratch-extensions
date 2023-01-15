@@ -111,6 +111,7 @@
                 b {
                   type: Scratch.ArgumentType.NUMBER,
                   defaultValue: 256
+                }
               }
             }
           }
