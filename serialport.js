@@ -89,8 +89,9 @@
                 type: Scratch.ArgumentType.NUMBER,
                 defaultValue: '9600'
               }
-            },
-            {
+            }
+          },
+          {
             opcode: 'sendToSerialPort',
             blockType: Scratch.BlockType.COMMAND,
             text: 'GETS FROM SERIAL PORT',
