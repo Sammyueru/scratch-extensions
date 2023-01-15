@@ -1,12 +1,12 @@
-//Samm (c)2023
-//1/14/2023
-
 (function(Scratch) {
   'use strict';
-
+  
   if (!Scratch.extensions.unsandboxed) {
     throw new Error('serialport extension must be run unsandboxed');
   }
+  
+  //Samm (c)2023
+  //1/14/2023
   
   var serial_connected_to_port = -1;
   var decoder;
