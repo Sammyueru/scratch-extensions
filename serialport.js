@@ -49,7 +49,7 @@
     
     if(port.readable) {
       const reader = port.readable.getReader();
-      const { value, done } = await reader.read();
+      const { value, done } = reader.read();
       if(done) {
         return value;
       }
@@ -110,11 +110,11 @@
     }
     
     getFromSerialPort(args) {
-      return await getDataFromSerialPort(args.port, args.rate);
+      return getDataFromSerialPort(args.port, args.rate);
     }
 
     sendToSerialPort(args) {
-      await writeDataToSerialPort(args.port, args.rate);
+      writeDataToSerialPort(args.port, args.rate);
     }
   }
 
