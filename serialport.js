@@ -110,11 +110,11 @@
     }
     
     getFromSerialPort(args) {
-      return getDataFromSerialPort(args.port, args.rate);
+      return await getDataFromSerialPort(args.port, args.rate);
     }
 
     sendToSerialPort(args) {
-      writeDataToSerialPort(args.port, args.rate);
+      await writeDataToSerialPort(args.port, args.rate);
     }
   }
 
