@@ -1,9 +1,11 @@
 (function(Scratch) {
   'use strict';
-
+  
+  /*
   if (!Scratch.extensions.unsandboxed) {
     throw new Error('save image extension must be run unsandboxed');
   }
+  */
   
   function componentToHex(c) {
     var hex = c.toString(16);
