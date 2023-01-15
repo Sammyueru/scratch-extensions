@@ -39,7 +39,9 @@
     for(var i = 0; i < pixels.length; i++) {
         // Convert pixels[i] to RGB
         // See http://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
-
+        
+        const {r, g, b} = hexToRgb(pixels[i]);
+      
         imgData[i] = r;
         imgData[i + 1] = g;
         imgData[i + 2] = b;
@@ -74,7 +76,7 @@
           {
             opcode: 'downloadimage',
             blockType: Scratch.BlockType.COMMAND,
-            text: 'DOWNLOAD [file] | TYPE: [imgtype] | IMG WIDTH: [width] | ',
+            text: 'DOWNLOAD [file] | TYPE: [imgtype] | IMG WIDTH: [width] | PIXEL ARRAY: [pixels]',
             arguments: {
               file: {
                 type: Scratch.ArgumentType.STRING,
@@ -92,6 +94,24 @@
                 type: Scratch.ArgumentType.LIST,
                 defaultValue: [255, 255, 255]
               }
+            },
+            {
+              opcode: 'convertRgbToHex',
+              blockType: Scratch.BlockType.REPORTER,
+              text: 'CONVERT [r][g][b] TO HEX',
+              arguments: {
+                r {
+                  type: Scratch.ArgumentType.NUMBER,
+                  defaultValue: 256
+                },
+                g {
+                  type: Scratch.ArgumentType.NUMBER,
+                  defaultValue: 256
+                },
+                b {
+                  type: Scratch.ArgumentType.NUMBER,
+                  defaultValue: 256
+              }
             }
           }
         ],
@@ -101,6 +121,11 @@
     downloadimage (args) {
       download(args.file, args.imgtype, args.width, args.pixels);
     }
+
+    convertRgbToHex (args) {
+      return rgbToHex(args.r, args.g, args.b);
+    }
+
   }
 
   Scratch.extensions.register(new SaveImage());
