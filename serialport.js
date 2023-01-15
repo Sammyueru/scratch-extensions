@@ -42,8 +42,11 @@
     if(serial_connected_to_port == -1) {
       await serial_connectPort(port, baudRate)
     }
-    else if(serial_connected_to_port == -1) {
-      await port.open({ baudRate: 9600});
+    else if(serial_connected_to_port == port) {
+      
+    }
+    else {
+      //Disconnect
     }
     
     if(port.readable) {
