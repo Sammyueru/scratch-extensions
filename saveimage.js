@@ -27,7 +27,7 @@
 
   const download = (file, img_type='png', width=255, pixels) => {
     var pixels = [],  // your massive array
-    height = Math.ceil(pixels.length / width),
+    var height = Math.ceil(pixels.length / width),
 
     // Create canvas
     canvas = document.createElement('canvas');
