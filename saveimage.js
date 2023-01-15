@@ -112,15 +112,15 @@
             arguments: {
               r: {
                 type: Scratch.ArgumentType.NUMBER,
-                defaultValue: 256
+                defaultValue: 255
               },
               g: {
                 type: Scratch.ArgumentType.NUMBER,
-                defaultValue: 256
+                defaultValue: 255
               },
               b: {
                 type: Scratch.ArgumentType.NUMBER,
-                defaultValue: 256
+                defaultValue: 255
               }
             }
           }
