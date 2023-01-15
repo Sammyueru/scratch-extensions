@@ -94,24 +94,24 @@
                 type: Scratch.ArgumentType.LIST,
                 defaultValue: [255, 255, 255]
               }
-            },
-            {
-              opcode: 'convertRgbToHex',
-              blockType: Scratch.BlockType.REPORTER,
-              text: 'CONVERT [r][g][b] TO HEX',
-              arguments: {
-                r {
-                  type: Scratch.ArgumentType.NUMBER,
-                  defaultValue: 256
-                },
-                g {
-                  type: Scratch.ArgumentType.NUMBER,
-                  defaultValue: 256
-                },
-                b {
-                  type: Scratch.ArgumentType.NUMBER,
-                  defaultValue: 256
-                }
+            }
+          },
+          {
+            opcode: 'convertRgbToHex',
+            blockType: Scratch.BlockType.REPORTER,
+            text: 'CONVERT [r][g][b] TO HEX',
+            arguments: {
+              r {
+                type: Scratch.ArgumentType.NUMBER,
+                defaultValue: 256
+              },
+              g {
+                type: Scratch.ArgumentType.NUMBER,
+                defaultValue: 256
+              },
+              b {
+                type: Scratch.ArgumentType.NUMBER,
+                defaultValue: 256
               }
             }
           }
