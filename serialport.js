@@ -4,6 +4,20 @@
   if (!Scratch.extensions.unsandboxed) {
     throw new Error('files extension must be run unsandboxed');
   }
+  
+  var connected_to_port = -1;
+  
+  function getDataFromSerialPort(port) {
+    if(connected_to_port == -1) {
+      
+    }
+    else if(connected_to_port == port) {
+      
+    }
+    else {
+      
+    }
+  }
 
   class serialport {
     getInfo () {
