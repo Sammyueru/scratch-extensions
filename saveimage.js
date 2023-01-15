@@ -30,9 +30,9 @@
     height = Math.ceil(pixels.length / width),
 
     // Create canvas
-    canvas = document.createElement('canvas'),
-    context = canvas.getContext('2d'),
-    imgData = context.createImageData(width, height);
+    canvas = document.createElement('canvas');
+    var context = canvas.getContext('2d');
+    var imgData = context.createImageData(width, height);
 
     canvas.height = height;
     canvas.width = width;
