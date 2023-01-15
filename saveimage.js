@@ -1,11 +1,9 @@
 (function(Scratch) {
   'use strict';
   
-  /*
   if (!Scratch.extensions.unsandboxed) {
     throw new Error('save image extension must be run unsandboxed');
   }
-  */
   
   function componentToHex(c) {
     var hex = c.toString(16);
@@ -31,7 +29,7 @@
     };
   }
 
-  const download = (file, img_type='png', width=255, pixels) => {
+  const download = (file, img_type='png', width=256, pixels) => {
     var height = Math.ceil(pixels.length / width);
 
     // Create canvas
@@ -64,9 +62,9 @@
     img.src = canvas.toDataURL('image/'+img_type);
     //document.body.appendChild(img);
 
-    //const blob = new Blob([img]);
-    //const url = URL.createObjectURL(blob);
-    const url = URL.createObjectURL(img);
+    const blob = new Blob(img);
+    const url = URL.createObjectURL(blob);
+    //const url = URL.createObjectURL(img);
     const link = document.createElement('a');
     link.href = url;
     link.download = file;
