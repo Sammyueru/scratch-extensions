@@ -5,7 +5,7 @@
     throw new Error('files extension must be run unsandboxed');
   }
 
-  class Files {
+  class serialport {
     getInfo () {
       return {
         id: 'files',
@@ -15,7 +15,7 @@
         color3: '#db8937',
         blocks: [
           {
-            opcode: 'GET FROM SERIAL PORT',
+            opcode: 'getFromSerialPort',
             blockType: Scratch.BlockType.REPORTER,
             text: 'GETS FROM SERIAL PORT',
             arguments: {
@@ -27,7 +27,13 @@
           }
         }
       };
+    }
+    
+    getFromSerialPort(args) {
+      return getDataFromSerialPort(args.port);
+    }
+    
   }
 
-  Scratch.extensions.register(new Files());
+  Scratch.extensions.register(new serialport());
 })(Scratch);
