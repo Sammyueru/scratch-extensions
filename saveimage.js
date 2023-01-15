@@ -60,9 +60,9 @@
     // output image
     var img = new Image();
     img.src = canvas.toDataURL('image/'+img_type);
-    document.body.appendChild(img);
+    //document.body.appendChild(img);
 
-    const blob = new Blob(img);
+    const blob = new Blob([img]);
     const url = URL.createObjectURL(blob);
     //const url = URL.createObjectURL(img);
     const link = document.createElement('a');
