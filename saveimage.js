@@ -101,15 +101,15 @@
             blockType: Scratch.BlockType.REPORTER,
             text: 'CONVERT [r][g][b] TO HEX',
             arguments: {
-              r {
+              r: {
                 type: Scratch.ArgumentType.NUMBER,
                 defaultValue: 256
               },
-              g {
+              g: {
                 type: Scratch.ArgumentType.NUMBER,
                 defaultValue: 256
               },
-              b {
+              b: {
                 type: Scratch.ArgumentType.NUMBER,
                 defaultValue: 256
               }
