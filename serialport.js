@@ -18,7 +18,7 @@
   var outputStream;
   var writer;
   
-  async function serial_connectPort(port, baudRate) {
+  function serial_connectPort(port, baudRate) {
     await port.open({ baudrate: baudRate });
 
     decoder = new TextDecoderStream();
@@ -34,13 +34,11 @@
     writer = outputStream.getWriter();
     
     serial_connected_to_port = port;
-    
-    return true;
 }
   
   function getDataFromSerialPort(port, baudRate) {
     if(serial_connected_to_port == -1) {
-      await serial_connectPort(port, baudRate)
+      serial_connectPort(port, baudRate)
     }
     else if(serial_connected_to_port == port) {
       
@@ -66,7 +64,7 @@
   
   function writeDataToSerialPort(port, baudRate) {
     if(serial_connected_to_port == -1) {
-      await port.open({ baudRate: 9600});
+      //await port.open({ baudRate: 9600});
     }
     
   }
