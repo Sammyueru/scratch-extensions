@@ -17,10 +17,15 @@
   }
   
   function hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    const r = parseInt(result[1], 16);
-    const g = parseInt(result[2], 16);
-    const b = parseInt(result[3], 16);
+    //var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    //const r = parseInt(result[1], 16);
+    //const g = parseInt(result[2], 16);
+    //const b = parseInt(result[3], 16);
+    
+    const r = parseInt(hex.substr(0,2), 16);
+    const g = parseInt(hex.substr(3,5), 16);
+    const b = parseInt(hex.substr(6,8), 16);
+    
     return {
       r,g,b
     };
@@ -95,7 +100,7 @@
               },
               pixels: {
                 type: Scratch.ArgumentType.LIST,
-                defaultValue: [255, 255, 255]
+                defaultValue: ['#100100100']
               }
             }
           },
