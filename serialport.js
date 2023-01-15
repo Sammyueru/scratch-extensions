@@ -1,3 +1,6 @@
+//Samm (c)2023
+//1/14/2023
+
 (function(Scratch) {
   'use strict';
 
@@ -5,28 +8,30 @@
     throw new Error('files extension must be run unsandboxed');
   }
   
-  var connected_to_port = -1;
+  var serial_init = false;
   
   function getDataFromSerialPort(port) {
-    if(connected_to_port == -1) {
+    if(serial_init == false) {
       await port.open({ baudRate: 9600});
+      serial_init = true;
     }
-    else if(connected_to_port == port) {
-      
+    
+  }
+  
+  function writeDataToSerialPort(port) {
+    if(serial_init == false) {
+      await port.open({ baudRate: 9600});
+      serial_init = true;
     }
-    else {
-      
-    }
+    
   }
 
   class serialport {
     getInfo () {
       return {
-        id: 'files',
-        name: 'Files',
-        color1: '#fcb103',
-        color2: '#db9a37',
-        color3: '#db8937',
+        id: 'samm-scratchport,
+        name: 'scratchport',
+        
         blocks: [
           {
             opcode: 'getFromSerialPort',
@@ -56,7 +61,10 @@
     getFromSerialPort(args) {
       return getDataFromSerialPort(args.port);
     }
-    
+
+    sendToSerialPort(args) {
+      writeDataToSerialPort(args.port);
+    }
   }
 
   Scratch.extensions.register(new serialport());
