@@ -40,7 +40,7 @@
   
   function getDataFromSerialPort(port, baudRate) {
     if(serial_connected_to_port == -1) {
-      serial_connectPort(port, baudRate)
+      await serial_connectPort(port, baudRate)
     }
     else if(serial_connected_to_port == -1) {
       await port.open({ baudRate: 9600});
@@ -62,9 +62,8 @@
   }
   
   function writeDataToSerialPort(port, baudRate) {
-    if(serial_init == false) {
+    if(serial_connected_to_port == -1) {
       await port.open({ baudRate: 9600});
-      serial_init = true;
     }
     
   }
