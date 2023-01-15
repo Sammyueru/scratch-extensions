@@ -5,7 +5,7 @@
   'use strict';
 
   if (!Scratch.extensions.unsandboxed) {
-    throw new Error('files extension must be run unsandboxed');
+    throw new Error('serialport extension must be run unsandboxed');
   }
   
   var serial_connected_to_port = -1;
