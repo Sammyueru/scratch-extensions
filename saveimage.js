@@ -72,6 +72,8 @@
     link.click();
     link.remove();
     URL.revokeObjectURL(img.src);
+    
+    window.alert('DOWNLOADED:' + link.download)
   };
 
   class SaveImage {
