@@ -58,21 +58,23 @@
     context.putImageData(imgData, 0, 0);
 
     // output image
-    //var img = new Image();
-    var img = new Image(imgData);
-    //img.src = canvas.toDataURL('image/'+img_type);
+    var img = new Image();
+    //var img = new Image(imgData);
+    img.src = canvas.toDataURL('image/'+img_type);
+    var imageBlob = await img.blob();
+    const url = URL.createObjectURL(imageBlob)
     //document.body.appendChild(img);
 
     //const blob = new Blob([img]);
     //const url = URL.createObjectURL(blob);
     //const url = URL.createObjectURL(img);
     const link = document.createElement('a');
-    link.href = img.src;
+    link.href = url;
     link.download = file;
     document.body.appendChild(link);
     link.click();
     link.remove();
-    URL.revokeObjectURL(img.src);
+    URL.revokeObjectURL(url);
     
     //window.alert('DOWNLOADED:' + link.download)
   };
