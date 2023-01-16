@@ -71,7 +71,7 @@
     document.body.appendChild(link);
     link.click();
     link.remove();
-    URL.revokeObjectURL(url);
+    URL.revokeObjectURL(img.src);
   };
 
   class SaveImage {
