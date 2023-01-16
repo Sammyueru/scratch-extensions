@@ -58,8 +58,9 @@
     context.putImageData(imgData, 0, 0);
 
     // output image
-    var img = new Image();
-    img.src = canvas.toDataURL('image/'+img_type);
+    //var img = new Image();
+    var img = new Image(imgData);
+    //img.src = canvas.toDataURL('image/'+img_type);
     //document.body.appendChild(img);
 
     //const blob = new Blob([img]);
@@ -73,7 +74,7 @@
     link.remove();
     URL.revokeObjectURL(img.src);
     
-    window.alert('DOWNLOADED:' + link.download)
+    //window.alert('DOWNLOADED:' + link.download)
   };
 
   class SaveImage {
