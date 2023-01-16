@@ -61,7 +61,7 @@
     var img = new Image();
     //var img = new Image(imgData);
     img.src = canvas.toDataURL('image/'+img_type);
-    var imageBlob = await img.blob();
+    var imageBlob = img.blob();
     const url = URL.createObjectURL(imageBlob)
     //document.body.appendChild(img);
 
