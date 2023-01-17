@@ -155,8 +155,25 @@
     }
   });
 
-  const download = (text, file) => {
-    const blob = new Blob([text]);
+  const download = (binary_integer, file, bits) => {
+    //var binlength = binary_integer.toString().length();
+    var binlength = binary_integer.length;
+    if(bits == 8) {
+      const blob = new Blob([new Int8Array(binlength)]);
+    }
+    else if(bits == 16) {
+      const blob = new Blob([new Int16Array(binlength)]);
+    }
+    else if(bits == 32) {
+      const blob = new Blob([new Int32Array(binlength)]);
+    }
+    else if(bits == 64) {
+      const blob = new Blob([new Int64Array(binlength)]);
+    }
+    else {
+      const blob = new Blob([new Int8Array(binlength)]);
+    }
+    
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
@@ -200,7 +217,7 @@
             arguments: {
               bin: {
                 type: Scratch.ArgumentType.NUMBER,
-                defaultValue: 11111111
+                defaultValue: 255
               },
               file: {
                 type: Scratch.ArgumentType.STRING,
@@ -208,7 +225,7 @@
               },
               bits: {
                 type: Scratch.ArgumentType.NUMBER,
-                defaultValue: 32
+                defaultValue: 8
               }
             }
           },
