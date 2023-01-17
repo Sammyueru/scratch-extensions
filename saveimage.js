@@ -67,7 +67,7 @@
       document.body.appendChild(a);
       a.style.display = 'block';
       a.download = file + '.' + img_type;
-      a.href = window.URL.createObjectURL(b);
+      a.href = window.URL.createObjectURL(blob);
     }, 'image/'+img_type);
     const url = URL.createObjectURL(imageBlob)
     //document.body.appendChild(img);
