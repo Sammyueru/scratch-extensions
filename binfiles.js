@@ -158,21 +158,41 @@
   const download = (binary_integer, file, bits) => {
     //var binlength = binary_integer.toString().length();
     var binlength = binary_integer.length;
+    
     if(bits == 8) {
-      const blob = new Blob([new Int8Array(binlength)]);
+      const bin = new Int8Array(binlength);
     }
     else if(bits == 16) {
-      const blob = new Blob([new Int16Array(binlength)]);
+      const bin = new Int16Array(binlength);
     }
     else if(bits == 32) {
-      const blob = new Blob([new Int32Array(binlength)]);
+      const bin = new Int32Array(binlength);
     }
     else if(bits == 64) {
-      const blob = new Blob([new Int64Array(binlength)]);
+      const bin = new BigInt64Array(binlength);
     }
     else {
-      const blob = new Blob([new Int8Array(binlength)]);
+      const bin = new Int8Array(binlength);
+      bits = 8;
     }
+    
+    for(var i = 0; i < binlength; i++) {
+      if(bits == 16) {
+        var new_bin = new Int16(binary_integer[i]);
+      }
+      else if(bits == 32) {
+        var new_bin = new Int32(binary_integer[i]);
+      }
+      else if(bits == 64) {
+        var new_bin = new BigInt64(binary_integer[i]);
+      }
+      else {
+        var new_bin = new Int8(binary_integer[i]);
+      }
+      bin[i] = new_bin;
+    }
+    
+    const blob = new Blob([bin]);
     
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
