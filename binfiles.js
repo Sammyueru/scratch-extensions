@@ -236,8 +236,8 @@
             text: 'download [bin] as [file] with [bits] bits',
             arguments: {
               bin: {
-                type: Scratch.ArgumentType.NUMBER,
-                defaultValue: 255
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: '255'
               },
               file: {
                 type: Scratch.ArgumentType.STRING,
@@ -289,7 +289,9 @@
     }
 
     download (args) {
-      download(args.text, args.file, args.bits);
+      var stringArray = args.bin.split(' ');
+      var numberArray = stringArray.map(Number);
+      download(numberArray, args.file, args.bits);
     }
 
     setOpenMode (args) {
