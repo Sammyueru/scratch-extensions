@@ -61,15 +61,18 @@
     var img = new Image();
     //var img = new Image(imgData);
     img.src = canvas.toDataURL('image/'+img_type);
+    /*
     var imageBlob = canvas.toBlob((blob) => {
       var a = document.createElement('a');
       a.src = img.src;
       document.body.appendChild(a);
       a.style.display = 'block';
       a.download = file + '.' + img_type;
-      a.href = window.URL.createObjectURL(blob);
+      a.href = window.URL.createObjectURL();
     }, 'image/'+img_type);
-    const url = URL.createObjectURL(imageBlob)
+    */
+    //const url = URL.createObjectURL(imageBlob)
+    const url = URL.createObjectURL(new Blob(img))
     //document.body.appendChild(img);
 
     //const blob = new Blob([img]);
