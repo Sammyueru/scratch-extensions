@@ -72,7 +72,7 @@
     }, 'image/'+img_type);
     */
     //const url = URL.createObjectURL(imageBlob)
-    const url = URL.createObjectURL([new Blob(img)])
+    const url = URL.createObjectURL(new Blob([img]))
     //document.body.appendChild(img);
 
     //const blob = new Blob([img]);
