@@ -178,16 +178,16 @@
     
     for(var i = 0; i < binlength; i++) {
       if(bits == 16) {
-        var new_bin = new Int16(binary_integer[i]);
+        var new_bin = binary_integer[i];
       }
       else if(bits == 32) {
-        var new_bin = new Int32(binary_integer[i]);
+        var new_bin = binary_integer[i];
       }
       else if(bits == 64) {
-        var new_bin = new BigInt64(binary_integer[i]);
+        var new_bin = new BigInt(binary_integer[i]);
       }
       else {
-        var new_bin = new Int8(binary_integer[i]);
+        var new_bin = new binary_integer[i];
       }
       bin[i] = new_bin;
     }
