@@ -204,7 +204,7 @@
     URL.revokeObjectURL(url);
   };
 
-  class Files {
+  class BinFiles {
     getInfo () {
       return {
         id: 'files',
@@ -301,5 +301,5 @@
     }
   }
 
-  Scratch.extensions.register(new Files());
+  Scratch.extensions.register(new BinFiles());
 })(Scratch);
