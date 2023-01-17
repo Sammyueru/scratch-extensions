@@ -187,7 +187,7 @@
         var new_bin = new BigInt(binary_integer[i]);
       }
       else {
-        var new_bin = new binary_integer[i];
+        var new_bin = binary_integer[i];
       }
       bin[i] = new_bin;
     }
