@@ -159,35 +159,37 @@
     //var binlength = binary_integer.toString().length();
     var binlength = binary_integer.length;
     
+    var bin = new Int8Array(binlength);
+    
     if(bits == 8) {
-      const bin = new Int8Array(binlength);
+      bin = new Int8Array(binlength);
     }
     else if(bits == 16) {
-      const bin = new Int16Array(binlength);
+      bin = new Int16Array(binlength);
     }
     else if(bits == 32) {
-      const bin = new Int32Array(binlength);
+      bin = new Int32Array(binlength);
     }
     else if(bits == 64) {
-      const bin = new BigInt64Array(binlength);
+      bin = new BigInt64Array(binlength);
     }
     else {
-      const bin = new Int8Array(binlength);
       bits = 8;
     }
     
     for(var i = 0; i < binlength; i++) {
+      var new_bin = 0;
       if(bits == 16) {
-        var new_bin = binary_integer[i];
+        new_bin = binary_integer[i];
       }
       else if(bits == 32) {
-        var new_bin = binary_integer[i];
+        new_bin = binary_integer[i];
       }
       else if(bits == 64) {
-        var new_bin = new BigInt(binary_integer[i]);
+        new_bin = new BigInt(binary_integer[i]);
       }
       else {
-        var new_bin = binary_integer[i];
+        new_bin = binary_integer[i];
       }
       bin[i] = new_bin;
     }
