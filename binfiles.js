@@ -204,7 +204,7 @@
               },
               file: {
                 type: Scratch.ArgumentType.STRING,
-                defaultValue: 'save.txt'
+                defaultValue: 'save.bin'
               },
               bits: {
                 type: Scratch.ArgumentType.NUMBER,
