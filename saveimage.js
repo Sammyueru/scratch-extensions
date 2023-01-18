@@ -79,9 +79,13 @@
     //const blob = new Blob([img]);
     //const url = URL.createObjectURL(blob);
     //const url = URL.createObjectURL(img);
+    
+    var url = canvas.toDataURL('image/'+img_type);
+    //canvas.toBlob
+    
     const link = document.createElement('a');
-    //link.href = url;
-    link.href = canvas.toDataURL('image/'+img_type)
+    link.href = url;
+    //link.href = canvas.toDataURL('image/'+img_type);;
     link.download = file;
     document.body.appendChild(link);
     link.click();
