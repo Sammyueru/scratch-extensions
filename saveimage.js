@@ -56,11 +56,12 @@
 
     // put data to context at (0, 0)
     context.putImageData(imgData, 0, 0);
+    //var img = canvas.createElement('img')
 
     // output image
-    var img = new Image();
+    //var img = new Image();
     //var img = new Image(imgData);
-    img.src = canvas.toDataURL('image/'+img_type);
+    //img.src = canvas.toDataURL('image/'+img_type);
     /*
     var imageBlob = canvas.toBlob((blob) => {
       var a = document.createElement('a');
@@ -72,14 +73,15 @@
     }, 'image/'+img_type);
     */
     //const url = URL.createObjectURL(imageBlob)
-    const url = URL.createObjectURL(new Blob([img]))
+    //const url = URL.createObjectURL(new Blob([]))
     //document.body.appendChild(img);
 
     //const blob = new Blob([img]);
     //const url = URL.createObjectURL(blob);
     //const url = URL.createObjectURL(img);
     const link = document.createElement('a');
-    link.href = url;
+    //link.href = url;
+    link.href = canvas.toDataURL('image/'+img_type)
     link.download = file;
     document.body.appendChild(link);
     link.click();
