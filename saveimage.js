@@ -80,17 +80,21 @@
     //const url = URL.createObjectURL(blob);
     //const url = URL.createObjectURL(img);
     
-    var url = canvas.toDataURL('image/'+img_type);
+    //var url = canvas.toDataURL('image/'+img_type);
     //canvas.toBlob
+    //canvas.toDataURL('image/'+img_type);
+    
+    //url = URL.createObjectURL(imgData);
+    blob = URL.createObjectURL(canvas.toBlob());
     
     const link = document.createElement('a');
-    link.href = url;
+    link.href = blob;
     //link.href = canvas.toDataURL('image/'+img_type);;
     link.download = file;
     document.body.appendChild(link);
     link.click();
     link.remove();
-    URL.revokeObjectURL(url);
+    URL.revokeObjectURL(blob);
     
     //window.alert('DOWNLOADED:' + link.download)
   };
