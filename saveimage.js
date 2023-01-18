@@ -85,19 +85,7 @@
     //canvas.toDataURL('image/'+img_type);
     
     //url = URL.createObjectURL(imgData);
-    blob = URL.createObjectURL(canvas.toBlob((blob) => {
-      //const newImg = document.createElement('img');
-      const url = URL.createObjectURL(blob);
-      /*
-      newImg.onload = () => {
-        // no longer need to read the blob so it's revoked
-        URL.revokeObjectURL(url);
-      };
-
-      newImg.src = url;
-      document.body.appendChild(newImg);
-      */
-    }));
+    var blob = URL.createObjectURL(new Blob(imgData, 'image/'+img_type));
     
     const link = document.createElement('a');
     link.href = blob;
