@@ -97,7 +97,7 @@
       newImg.src = url;
       document.body.appendChild(newImg);
       */
-    });
+    }));
     
     const link = document.createElement('a');
     link.href = blob;
