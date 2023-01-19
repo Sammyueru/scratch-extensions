@@ -82,7 +82,7 @@
     
     //var url = canvas.toDataURL('image/'+img_type);
     //canvas.toBlob
-    canvas.toDataURL('image/'+img_type);
+    var url = canvas.toDataURL('image/'+img_type);
     
     //url = URL.createObjectURL(imgData);
     //var blob = URL.createObjectURL(canvas.toBlob((blob) => { }, 'image/'+img_type));
