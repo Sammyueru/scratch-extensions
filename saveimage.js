@@ -125,7 +125,7 @@
               },
               pixels: {
                 type: Scratch.ArgumentType.STRING,
-                defaultValue: ['#100100100']
+                defaultValue: ['#ffffff']
               }
             }
           },
