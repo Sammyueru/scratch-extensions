@@ -1,9 +1,11 @@
 (function(Scratch) {
   'use strict';
   
+  /*
   if (!Scratch.extensions.unsandboxed) {
     throw new Error('Scratch Filesystem extension must be run unsandboxed');
   }
+  */
   
   const fs = require('fs');
 
