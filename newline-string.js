@@ -10,6 +10,11 @@
             opcode: 'newline_return',
             blockType: Scratch.BlockType.REPORTER,
             text: 'NEWLINE'
+          },
+          {
+            opcode: 'tab_return',
+            blockType: Scratch.BlockType.REPORTER,
+            text: 'TAB'
           }
         ],
       };
@@ -17,6 +22,10 @@
 
     newline_return() {
       return '\n';
+    }
+    
+    tab_return() {
+      return '\t';
     }
   }
 
