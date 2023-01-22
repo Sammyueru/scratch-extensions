@@ -3,8 +3,8 @@
   class newline {
     getInfo () {
       return {
-        id: 'saveimage',
-        name: 'Save Image',
+        id: 'newline',
+        name: 'NEWLINE',
         blocks: [
           {
             opcode: 'newline_return',
