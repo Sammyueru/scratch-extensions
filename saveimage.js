@@ -153,7 +153,8 @@
     }
 
     downloadimage (args) {
-      download(args.file, args.imgtype, args.width, args.pixels);
+      var pixels_arr = args.pixels.split(' ');
+      download(args.file, args.imgtype, args.width, pixels_arr);
     }
 
     convertRgbToHex (args) {
